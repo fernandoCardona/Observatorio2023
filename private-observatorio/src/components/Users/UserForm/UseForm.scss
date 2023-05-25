@@ -1,0 +1,21 @@
+//IMPORTAMOS index.scss GENERALES:
+//@import '~/src/scss/index.scss';
+@import '../../../scss/index.scss';
+
+.user-form {
+
+
+    &__avatar{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+
+        > .ui.image {
+            margin: 0px;
+            border: 2px dashed $primary;
+            padding: 5px;
+            cursor: pointer;
+        }
+    }
+}

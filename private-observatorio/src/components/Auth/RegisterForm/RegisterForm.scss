@@ -1,0 +1,11 @@
+//IMPORTAMOS index.scss GENERALES:
+@import '~/src/scss/index.scss';
+//@import "../../../../scss/index.scss";
+
+.register-form {
+    background-color: $background-primary;
+  &__error {
+    color: $error;
+    text-align: center;
+  }
+}

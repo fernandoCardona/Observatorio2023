@@ -1,0 +1,71 @@
+@import '../../SCSS/index.scss';
+.ui.button.resetBtn{
+    width: 0px;
+    font-family: "Acciona", sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0px;
+    cursor: pointer;  
+}
+.menuResp {
+    width: 50px;
+    height: 50px;
+    
+    cursor: pointer;
+}
+.logout{
+    width: 50px; height: 50px; display: block;background-color:#fff;
+}
+@media screen and (max-width: 1024px) {
+    .btn_menu_mobile {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
+
+        .hamburguer-menu {
+            display: block;
+            background-color: #fff;
+            width: 15px;
+            height: 2px;
+            position: relative;
+            -webkit-transition: background 0.5s;
+            transition: background 0.5s;
+        }
+        .hamburguer-menu:before {
+            content: '';
+            display: block;
+            background-color: #fff;
+            width: 26px;
+            height: 2px;
+            position: absolute;
+            bottom: -9px;
+            right: 0;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+        .hamburguer-menu:after {
+            content: '';
+            display: block;
+            background-color: #fff;
+            width: 26px;
+            height: 2px;
+            position: absolute;
+            top: -9px;
+            right: 0;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+    }
+}

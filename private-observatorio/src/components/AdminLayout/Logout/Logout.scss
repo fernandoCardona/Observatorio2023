@@ -1,0 +1,49 @@
+.ui.button {
+    width: auto;
+    font-family: "Acciona", sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0px;
+    cursor: pointer;
+    z-index: 10;
+}
+.logout {
+    width: 25px;
+    height: 25px;
+    display: block;
+    color: #FFF;
+    background-color: transparent;
+    cursor: pointer;
+    
+
+    &:hover {
+        #arrow {
+            transform-origin: 50% 50%;
+            animation: scale 1.3s linear infinite reverse;
+            -webkit-transition: scale 1.3s ease-out;
+            -moz-transition: scale 1.3s ease-out;
+            -o-transition: scale 1.3s ease-out;
+            transition: scale 1.3s ease-out; 
+          }
+        @keyframes scale {
+            from {
+                transform: scale(1.1); 
+            }
+            to {
+                transform: scale(0);
+            }
+            from {
+                transform: scale(1.1);  
+            }
+          }
+        
+    }
+}

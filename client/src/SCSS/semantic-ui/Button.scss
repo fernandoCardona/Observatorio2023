@@ -1,0 +1,96 @@
+
+.ui.button {
+    width: 275px;
+    height: 72px;
+    font-family: "Acciona", sans-serif;
+    font-size: 13px;
+    line-height: 22px;
+	font-weight: 800;
+    letter-spacing: 2px;
+	text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+	color: #FFF;
+    background-color: $button-Bg-secondary;
+	border-radius: 0;
+    padding: 13px;
+    cursor: pointer; 
+}
+
+.ui.button.primary {
+	color: #FFF;
+    background-color: $button-Bg-primary;
+    border: 1px solid $button-Bg-primary;
+	transition: all 0.6s;
+	position: relative;
+    &:hover{
+        color: $button-Bg-primary;
+        background-color: #FFF;
+        border: 1px solid $button-Bg-primary;
+        transition: all 0.6s;
+        position: relative;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.4s;
+        
+    }
+    &:hover::before {
+        opacity: 0 ;
+        transform: scale(0.5,0.5);
+        background-color: $button-Bg-secondary;
+    }
+    &:hover::after {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+    &::selection {
+        background-color: $button-Bg-secondary;
+    }
+}
+// .ui.button.primary:hover {
+// 	color: $button-Bg-primary;
+//     background-color: #FFF;
+//     border: 1px solid $button-Bg-primary;
+// 	transition: all 0.6s;
+// 	position: relative;
+// }
+// .ui.button.primary::before {
+// 	content: '';
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	z-index: 1;
+// 	transition: all 0.4s;
+    
+// }
+// .ui.button.primary:hover::before {
+// 	opacity: 0 ;
+// 	transform: scale(0.5,0.5);
+//     background-color: $button-Bg-secondary;
+// }
+// .ui.button.primary::after {
+// 	content: '';
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	z-index: 1;
+// 	opacity: 0;
+// 	transition: all 0.3s;
+// 	// border: 1px solid rgba(33,44,55,1);
+// 	// transform: scale(1.2,1.2);
+// }
+// .ui.button.primary:hover::after {
+// 	opacity: 1;
+// 	transform: scale(1,1);
+// }

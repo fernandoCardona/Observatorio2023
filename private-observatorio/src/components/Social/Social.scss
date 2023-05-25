@@ -1,0 +1,22 @@
+//IMPORTAMOS index.scss GENERALES:
+//@import '~/src/scss/index.scss';
+@import '../../scss/index.scss';
+
+.social-page {
+    
+    &__new-social-cont{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        &__add {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        }
+        > .ui.button{
+            margin: 0px;
+        }
+    }
+    
+}

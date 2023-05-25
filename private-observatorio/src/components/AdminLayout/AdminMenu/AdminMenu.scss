@@ -1,0 +1,29 @@
+//IMPORTAMOS index.scss GENERALES:
+//@import '~/src/scss/index.scss';
+@import '../../../scss/index.scss';
+
+.ui.menu.admin-menu {
+    > .item{
+        display:flex;
+        color: $text-light;
+        padding: 15px 20px !important;
+        margin: 0px !important;
+        border-radius: 0px !important;
+        -webkit-transition: background-color .5s, color .4s ease-out;
+        -moz-transition: background-color .5s, color .4s ease-out;
+        -o-transition: background-color .5s, color .4s ease-out;
+        transition: background-color .5s, color .4s ease-out;
+       
+        &:hover,
+        &.active,
+        &.active:hover {
+            color: $text-primary;
+            background-color: $background-tertiary-light;
+        }
+        > i {
+            margin: 0px !important;
+            margin-right: 10px !important;
+        }
+        
+    }
+}
