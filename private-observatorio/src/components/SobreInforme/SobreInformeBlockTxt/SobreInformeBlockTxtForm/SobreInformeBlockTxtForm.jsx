@@ -120,8 +120,8 @@ export const SobreInformeBlockTxtForm = ( props ) => {
     
     return (
       <Form className="sobreInformeBlockTxt-form" onSubmit={formik.handleSubmit}>
-            <div className="social-form__images-wrapper">
-                <div className="social-form__images-wrapper__image" {...getRootPropsImage1()} >
+            <div className="sobreInformeBlockTxt-form__images-wrapper">
+                <div className="sobreInformeBlockTxt-form__images-wrapper__image" {...getRootPropsImage1()} >
                     <input {...getInputPropsImage1()} />
                     {
                         getImage() 
@@ -131,7 +131,7 @@ export const SobreInformeBlockTxtForm = ( props ) => {
                             </div> )
                     }
                 </div>
-                <div className="social-form__images-wrapper__image" {...getRootPropsImage2()} >
+                <div className="sobreInformeBlockTxtl-form__images-wrapper__image" {...getRootPropsImage2()} >
                     <input {...getInputPropsImage2()} />
                     {
                         getImage2() 

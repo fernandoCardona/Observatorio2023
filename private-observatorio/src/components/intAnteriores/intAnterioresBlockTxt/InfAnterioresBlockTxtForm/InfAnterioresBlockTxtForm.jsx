@@ -119,7 +119,9 @@ export const InfAnterioresBlockTxtForm = ( props ) => {
     
     return (
       <Form className="infAnterioresBlockTxt-form" onSubmit={formik.handleSubmit}>
-            <div className="infAnterioresBlockTxt-form__images-wrapper">
+            <Form.Group width="equal">
+            <div className="menu-form__miniature">
+               
                 <div className="infAnterioresBlockTxt-form__images-wrapper__image" {...getRootPropsImage1()} >
                     <input {...getInputPropsImage1()} />
                     {
@@ -140,7 +142,10 @@ export const InfAnterioresBlockTxtForm = ( props ) => {
                             </div> )
                     }
                 </div>
+            
             </div>
+            </Form.Group>
+            
             <Form.Group widths="equal">
               
                 <Form.TextArea

@@ -2,7 +2,7 @@
 //@import '~/src/scss/index.scss';
 @import '../../../../scss/index.scss';
 
-.sobreInformeBlockTxt-form {
+.infAnterioresBlockTxt-form {
 
     
     &__miniature {
@@ -45,7 +45,7 @@
   }
 
   @media screen and (max-width: 768px){
-    .sobreInformeBlockTxt-form__miniature {
+    .infAnterioresBlockTxt-form__miniature {
             width: 97%;
             margin: 0 auto;
         }

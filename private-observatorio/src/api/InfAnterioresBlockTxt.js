@@ -31,15 +31,16 @@ export class InfAnterioresBlockTxt {
                 formData.append(key, data[key]);
             });
             
-            // //console.log(data.file)
-            // if (data.file) {
-            //     formData.append("image1", data.file);
-            // }
-            // //console.log(data.file2)
-            // if (data.file2) {
-            //     formData.append("image2", data.file);
-            // }
-            // console.log('DATA',data)
+             //console.log(data.file)
+             if (data.file) {
+                 formData.append("image1", data.file);
+             }
+             //console.log(data.file2)
+             if (data.file2) {
+                 formData.append("image2", data.file);
+             }
+             console.log('DATA-Anteriores',data)
+
             const url = `${this.baseApi}/${ENV.API_ROUTES.ANTERIORESBLOCKTXT}`;
             const params = {
                 method: "POST",
@@ -68,15 +69,15 @@ export class InfAnterioresBlockTxt {
                 formData.append(key, data[key]);
             });
              
-            //console.log('data.file',data.image1)
-            //console.log(data.file)
-            if (data.file) {
-                formData.append("image1", data.file);
-            }
-            console.log(data.file2)
-            if (data.file2) {
-                formData.append("image2", data.file);
-            }  
+             //console.log('data.file',data.image1)
+             //console.log(data.file)
+             if (data.file) {
+             formData.append("image1", data.file);
+             }
+             console.log(data.file2)
+             if (data.file2) {
+                 formData.append("image2", data.file);
+             }  
 
             const url = `${this.baseApi}/${ENV.API_ROUTES.ANTERIORESBLOCKTXT}/${idInfAnterioresBlockTxt}`;
             const params = {
@@ -87,7 +88,7 @@ export class InfAnterioresBlockTxt {
             },
             body: formData,
             };
-    
+ 
             const response = await fetch(url, params);
             const result = await response.json();
     

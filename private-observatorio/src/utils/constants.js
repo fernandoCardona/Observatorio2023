@@ -32,6 +32,7 @@ export const ENV = {
         //INFORMES ANTERIORES endPoins:
         ANTERIORESHEADER:'infAnterioresHeader',
         ANTERIORESBLOCKTXT:'infAntBlockTxt',
+        ANTERIORESPOST: 'infAntPost',
         //PDFS endPoins:
         PDF: 'pdf',
         

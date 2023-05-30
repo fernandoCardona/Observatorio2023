@@ -5,12 +5,12 @@ import { ENV } from '../utils';
 //IMPORTS COMPONENTS DE LA APP:
 //IMPORTS Styles/Images DE LA APP:
 
-export class SobreInformeBlockTxt {
+export class InfAntPost {
     baseApi = ENV.BASE_API;
 
-    async getSobreInformeBlockTxt( active = undefined ) {
+    async getInfAntPosts( active = undefined ) {
         try {
-          const url = `${this.baseApi}/${ENV.API_ROUTES.SOBREINFORMEBLOCKTXT}?active=${active}`;
+          const url = `${this.baseApi}/${ENV.API_ROUTES.ANTERIORESPOST}?active=${active}`;
             //console.log(url)
           const response = await fetch(url);
           const result = await response.json();
@@ -24,24 +24,26 @@ export class SobreInformeBlockTxt {
         }
     }
 
-    async createSobreInformeBlockTxt(accessToken, data) {
+    async createInfAntPost(accessToken, data) {
         try {
             const formData = new FormData();
             Object.keys(data).forEach((key) => {
                 formData.append(key, data[key]);
             });
-            
+            //console.log(data.file)
+            // if (data.file) {
+            //     formData.append("image", data.file);
+            // }
             //console.log(data.file)
             if (data.file) {
                 formData.append("image1", data.file);
             }
-            //console.log(data.file2)
-            if (data.file2) {
-                formData.append("image2", data.file);
-            }
-            console.log('DATA',data)
-            
-            const url = `${this.baseApi}/${ENV.API_ROUTES.SOBREINFORMEBLOCKTXT}`;
+            // console.log(data.file2)
+            // if (data.file2) {
+            //     formData.append("image2", data.file);
+            // }
+            //console.log('DATA',data)
+            const url = `${this.baseApi}/${ENV.API_ROUTES.ANTERIORESPOST}`;
             const params = {
                 method: "POST",
                 headers: {
@@ -62,7 +64,7 @@ export class SobreInformeBlockTxt {
         }
     } 
 
-    async updateSobreInformeBlockTxt(accessToken, idSobreInformeBlockTxt, data) {
+    async updateInfAntPost(accessToken, idInfAntPosts, data) {
         try {
             const formData = new FormData();
             Object.keys(data).forEach((key) => {
@@ -70,16 +72,15 @@ export class SobreInformeBlockTxt {
             });
              
             //console.log('data.file',data.image1)
-            //console.log(data.file)
-            if (data.file) {
-                formData.append("image1", data.file);
+            if (data.fileImage) { 
+                formData.append("image1", data.fileImage);
             }
-            console.log(data.file2)
-            if (data.file2) {
-                formData.append("image2", data.file);
-            }  
+            //console.log('data.file2',data.image2)
+            // if (data.fileLottie) { 
+            //     formData.append("lottie", data.fileLottie);
+            // }   
 
-            const url = `${this.baseApi}/${ENV.API_ROUTES.SOBREINFORMEBLOCKTXT}/${idSobreInformeBlockTxt}`;
+            const url = `${this.baseApi}/${ENV.API_ROUTES.ANTERIORESPOST}/${idInfAntPosts}`;
             const params = {
             method: "PATCH",
             headers: {
@@ -100,9 +101,10 @@ export class SobreInformeBlockTxt {
         }
     }
 
-    async deleteSobreInformeBlockTxt(accessToken, idSobreInformeBlockTxt) {
+    async deleteInfAntPost(accessToken, idInfAntPosts) {
+        console.log(idInfAntPosts)
         try {
-            const url = `${this.baseApi}/${ENV.API_ROUTES.SOBREINFORMEBLOCKTXT}/${idSobreInformeBlockTxt}`;
+            const url = `${this.baseApi}/${ENV.API_ROUTES.ANTERIORESPOST}/${idInfAntPosts}`;
             const params = {
             method: "DELETE",
             headers: {

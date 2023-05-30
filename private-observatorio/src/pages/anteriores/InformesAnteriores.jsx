@@ -4,7 +4,7 @@
 //IMPORTS COMPONENTS DE LA APP:
 //IMPORTS Styles/Images DE LA APP:
 
-import { InfAnterioresBlockTxt, InfAnterioresHeader } from "../../components/intAnteriores"
+import { InfAnterioresBlockTxt, InfAnterioresHeader, InfAnterioresPost } from "../../components/intAnteriores"
 
 
 
@@ -25,7 +25,7 @@ export const InformesAnteriores = () => {
             <br/>
             <hr />
             <br/>
-            {/* <SobreInformeContent /> */}
+            <InfAnterioresPost />
             <br/>
             <hr />
             <br/>
