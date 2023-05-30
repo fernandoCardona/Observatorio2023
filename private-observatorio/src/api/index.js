@@ -15,3 +15,4 @@ export * from './SobreInformeContent';
 export * from './InfAnterioresHeader';
 export * from './InfAnterioresBlockTxt';
 export * from './InfAnteriores';
+export * from './Pdf';
