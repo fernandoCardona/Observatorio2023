@@ -33,10 +33,12 @@ const createIntSobreBlockTxt = async( req, res ) => {
 
     //Controlamos imagen de IntSobreBlockTxt:
     if (req.files.image1) {
+       
         const imagePath = image.getFilePath(req.files.image1);
         intSobreBlockTxt.image1 = imagePath;
     }
     if (req.files.image2) {
+        
         const imagePath = image.getFilePath(req.files.image2);
         intSobreBlockTxt.image2 = imagePath;
     }
@@ -99,7 +101,8 @@ const deleteIntSobreBlockTxt = async( req, res ) => {
 
 }
 
-const deleteImagePath = async (id,  newImage1,  newImage2) => {console.log('Post',id)
+const deleteImagePath = async (id,  image1,  image2) => { 
+    //console.log('Post',id)
     try {
         const IntSobreBlockTxtStored = await IntSobreBlockTxt.findById(id);
         if (!IntSobreBlockTxtStored) {

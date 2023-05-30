@@ -6,27 +6,6 @@ const image = require('../../utils/image');
 const InfAntPost = require('../../models/infAnteriores/infAntPost');
 
 
-const createInfAntPost = async( req, res ) => {
-    const infAntPost = new InfAntPost(req.body);
-
-    //Controlamos imagen de avatar:
-    if (req.files.image) {
-        const imagePath = image.getFilePath(req.files.image);
-        infAntPost.image = imagePath;
-    }
-
-    infAntPost.save(( error, infAntPostStorage ) =>{
-        if (error) {
-            res.status(400).send({ msg: 'Error al crear el nuevo infAntPost' });
-        }else {
-            res.status(201).send({
-                msg: 'infAntPost creado correctamente',
-                infAntPostStorage
-            })
-        }
-    })
-};
-
 const getInfAntPost = async( req, res ) => {
     const { active } = req.query; 
     let response = null;
@@ -49,6 +28,28 @@ const getInfAntPost = async( req, res ) => {
     
 }
 
+
+const createInfAntPost = async( req, res ) => {
+    const infAntPost = new InfAntPost(req.body);
+
+    //Controlamos imagen de avatar:
+    if (req.files.image1) {
+        const imagePath = image.getFilePath(req.files.image1);
+        infAntPost.image1 = imagePath;
+    }
+
+    infAntPost.save(( error, infAntPostStorage ) =>{
+        if (error) {
+            res.status(400).send({ msg: 'Error al crear el nuevo infAntPost' });
+        }else {
+            res.status(201).send({
+                msg: 'infAntPost creado correctamente',
+                infAntPostStorage
+            })
+        }
+    })
+};
+
 const updateInfAntPost = async( req, res ) => {
     const {id} = req.params;
     const infAntPostData = req.body;
@@ -56,9 +57,10 @@ const updateInfAntPost = async( req, res ) => {
     await deleteImagePath(id);
 
     //Controlamos imagen:
-    if (req.files.image) {
-        const imagePath = image.getFilePath(req.files.image);
-        infAntPostData.image = imagePath;
+    if (req.files.image1) {
+        await deleteImagePath(id);
+        const imagePath = image.getFilePath(req.files.image1);
+        infAntPostData.image1 = imagePath;
     }
 
     InfAntPost.findByIdAndUpdate( {_id:id }, infAntPostData, (error) =>{
@@ -96,7 +98,7 @@ const deleteImagePath = async (id) => {console.log('Post',id)
         if (!InfAntPostStored) {
             throw new Error('No se ha encontrado la InfAntPost.');
         }
-        const imagePath = InfAntPostStored.image;
+        const imagePath = InfAntPostStored.image1;
         console.log('IMAGEPATH', imagePath);
         fs.unlink(`uploads/${imagePath}`, (error) => {
             if (error) {
